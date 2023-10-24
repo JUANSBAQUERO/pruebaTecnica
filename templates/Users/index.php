@@ -29,7 +29,7 @@
                         id="table"
                     >
                         <thead>
-                            <tr>
+                            <tr class="table-headers">
                                 <th class="text-decoration-none text-dark">Id usuaro</th>
                                 <th class="text-decoration-none text-dark">Nombres</th>
                                 <th class="text-decoration-none text-dark">Apellidos</th>

@@ -41,7 +41,7 @@ class UsersController extends AppController
         if ($this->getRequest()->getSession()->read('Auth.User.perfil') === 'admin') {
             $users = $this->paginate($this->Users);
         } else {
-            $currentUserID = $this->getRequest()->getSession()->read('Auth.User.perfil');
+            $currentUserID = $this->getRequest()->getSession()->read('Auth.User.id_usuario');
             $users = $this->Users->find()
                 ->where(['created_by' => $currentUserID])
                 ->toArray();
@@ -234,7 +234,7 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEmptyEntity();
-        $currentUserID = $this->Authentication->getIdentity()->id_usuario;
+        $currentUserID = $this->getRequest()->getSession()->read('Auth.User.id_usuario');
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
             $user->created_by = $currentUserID;
