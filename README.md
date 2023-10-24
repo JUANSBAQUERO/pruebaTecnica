@@ -1,53 +1,101 @@
-# CakePHP Application Skeleton
+# Sistema de Login y API CRUD - Prueba Técnica
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=master)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%207-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+Este proyecto es una prueba técnica para crear un sistema de inicio de sesión, un API con operaciones CRUD, y la exportación de datos en formatos .xlsx/.xls, .csv y .txt. Utilizaremos PHP 7.4.23 con el framework CakePHP 4.5 y MySQL como base de datos. El sistema de login encripta contraseñas usando MD5.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 4.x.
+## Tabla de Contenidos
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+1. [Requisitos Previos](#requisitos-previos)
+2. [Instalación](#instalación)
+3. [Estructura del Proyecto](#estructura-del-proyecto)
+4. [Configuración](#configuración)
+5. [Ejecución](#ejecución)
+6. [API CRUD](#api-crud)
+7. [Exportación de Datos](#exportación-de-datos)
+8. [Base de Datos](#base-de-datos)
+9. [Extra(Swagger)](#swagger)
 
-## Installation
+## Requisitos Previos
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+Asegúrate de tener instalados los siguientes componentes:
 
-If Composer is installed globally, run
+- PHP 7.4.23
+- Composer
+- MySQL
+- Apache Server
+- phpMyAdmin (u otro administrador de bases de datos de tu preferencia)
+- Git
 
-```bash
-composer create-project --prefer-dist cakephp/app
-```
+## Instalación
 
-In case you want to use a custom app dir name (e.g. `/myapp/`):
+1. Clona el repositorio desde GitHub:
 
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
+   ```bash
+   git clone https://github.com/JUANSBAQUERO/pruebaTecnica.git
 
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
+2. Navega al directorio del proyecto "pruebaTecnica/"
 
-```bash
-bin/cake server -p 8765
-```
+3. Ejecuta el comando "composer install"
 
-Then visit `http://localhost:8765` to see the welcome page.
+# Estrutuctura del proyecto
 
-## Update
+El proyecto conserva la estructura típica de CakePHP con el webroot y las carpetas de controladores, modelos y vistas, en otras palabras MVC
 
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
+# Ejecución 
 
-## Configuration
+# Ejecución en Windows con XAMPP
 
-Read and edit the environment specific `config/app_local.php` and set up the
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
+Si estás utilizando Windows y XAMPP para ejecutar este proyecto, sigue estos pasos:
 
-## Layout
+1. Asegúrate de tener XAMPP instalado en tu sistema. Puedes descargarlo desde [el sitio web de XAMPP](https://www.apachefriends.org/index.html).
 
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+2. Clona el repositorio dentro de la carpeta `htdocs` de XAMPP. Puedes encontrar la carpeta `htdocs` en la instalación de XAMPP (por ejemplo, `C:\xampp\htdocs`).
+
+   ```bash
+    git clone https://github.com/JUANSBAQUERO/pruebaTecnica.git
+
+3. Asegúrate de que los servicios de Apache y MySQL estén activados. Puedes hacerlo desde la interfaz de usuario de XAMPP
+
+4. Abre tu navegador web y visita http://localhost/pruebaTecnica (o el puerto que estés utilizando) para acceder a la aplicación.
+
+# Ejecución en macOS con MAMP
+
+Si estás utilizando macOS y MAMP para ejecutar este proyecto, sigue estos pasos:
+
+1. Asegúrate de tener MAMP instalado en tu sistema. Puedes descargarlo desde [el sitio web de MAMP](https://www.mamp.info/).
+
+2. Abre la aplicación MAMP y asegúrate de que los servicios de Apache y MySQL estén activados. Puedes hacerlo desde la interfaz de usuario de MAMP.
+
+3. Clona el repositorio dentro de la carpeta `htdocs` de MAMP. Puedes encontrar la carpeta `htdocs` en la instalación de MAMP, generalmente en `Applications/MAMP/htdocs`.
+
+   ```bash
+   git clone https://github.com/JUANSBAQUERO/pruebaTecnica.git
+
+4. Abre tu navegador web y visita http://localhost/pruebaTecnica (o el puerto que estés utilizando) para acceder a la aplicación.
+
+# Configuración
+
+La configuración de la base de datos se realiza en config/app_local.php
+
+# Api CRUD
+
+El proyecto incluye un API con operaciones CRUD. Puedes acceder a estas operaciones mediante rutas específicas. Asegúrate de autenticarte correctamente para acceder a las funciones protegidas.
+
+# Exportación de datos
+
+Puedes exportar los datos en los siguientes formatos:
+
+- .xlsx/.xls
+- .csv
+- .txt
+
+Asegúrate de estar autenticado antes de generar el informe. Los datos exportados serán específicos para el usuario que genera el informe.
+
+# Base de datos
+
+La base de datos se genero en phpMyAdmin.
+
+Se proporciona un archivo de copia/dump de la base de datos en el archivo database_dump.sql. Puedes importar esto en tu base de datos para tener una estructura de tabla inicial.
+
+# Swagger
+
+Si deseas acceder y configurar Swagger para probar los servicios del CRUD, simplemente dirígete a la siguiente URL: http://localhost/pruebaTecnica/swagger.
